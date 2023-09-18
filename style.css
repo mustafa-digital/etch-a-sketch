@@ -1,17 +1,41 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
     background-color: blue;
     margin: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: yellow;
+}
+
+label {
+    color: yellow;
+    font-size: 18px;
+}
+
+.new-grid-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 50px;
+}
+
+button {
+    height: 50px;
+    background-color: yellow;
+    border-radius: 15px;
 }
 
 .grid-container {
-    width: 99vw;
-    height: 90vh;
+    width: 80vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-self: center;
 
     background-color: blue;
 }

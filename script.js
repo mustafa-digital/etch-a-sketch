@@ -1,21 +1,20 @@
 /* script.js */
 
-const GRID_SIZE = 16;
 
-function createGrid() {
+function createGrid(gridNum) {
     const gridContainer = document.querySelector(".grid-container");
 
     //let num = -1;
-    for (let i = 0; i < GRID_SIZE; i++) {
-        for (let j = 0; j < GRID_SIZE; j++) {
+    for (let i = 0; i < gridNum; i++) {
+        for (let j = 0; j < gridNum; j++) {
 
             const div = document.createElement("div");
             div.setAttribute("class", "grid-div");
 
             div.style.backgroundColor = "yellow";
             div.style.flex = "1";
-            div.style.flexBasis = "6.1%";
-            div.style.height = "5.625vh";
+            div.style.flexBasis = `${100/gridNum}%`;
+            div.style.height = `${100/gridNum}vh`;
             div.style.display = "flex";
             div.style.flexWrap = "wrap";
             div.style.justifyContent = "center";
@@ -39,8 +38,28 @@ function createGrid() {
 }
 
 function hoverEffect(e) {
-    console.log(e.target);
     e.target.style.backgroundColor = "black";
+    e.target.style.border = "solid yellow 2px";
 }
 
-createGrid();
+function clearGrid() {
+    const gridContainer = document.querySelector(".grid-container");
+    gridContainer.textContent = "";
+}
+
+function createNewGrid() {
+    
+    const gridNum = document.getElementById("grid-num").value;
+   
+    if (gridNum){
+        clearGrid();
+        createGrid(gridNum);
+    }
+}
+
+const btn = document.querySelector(".create-new-button");
+btn.addEventListener("click", createNewGrid);
+
+
+
+createGrid(16);
