@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: blue;
+    margin: 2px;
+}
+
+.grid-container {
+    width: 99vw;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    background-color: blue;
+}
